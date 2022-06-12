@@ -36,10 +36,9 @@ We developed an association implementation that is useful and expressive. It is 
 
 ## Associations by Example
 
-Figure 1 shows a class diagram of a simple world. It uses the UML notation, except that multiplicity is shown by a solid dot instead of a text expression such as {0..\*}. Each rectangle
-represents a class with the class name inside the rectangle.
+Figure 1 shows a class diagram of a simple world. It uses the UML notation, except that multiplicity is shown by a solid dot instead of a text expression such as {0..\*}. Each rectangle represents a class with the class name inside the rectangle.
 
-![figure-1](figure-1.png 'Figure 1')
+![figure1](figure1.png 'Figure 1')
 
 _**Figure 1:** A class diagram for a very simple world._
 
