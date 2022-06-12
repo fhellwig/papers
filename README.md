@@ -1,4 +1,4 @@
-# publications
+# Publications
 
 Articles, papers, and postings.
 
