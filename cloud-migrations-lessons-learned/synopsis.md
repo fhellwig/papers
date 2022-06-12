@@ -20,4 +20,4 @@ The choices of vendors and solutions made by represented Government agencies and
 
 ## Original Paper
 
-[This is a link to the original white paper as a PDF file.](paper.pdf)
+[This is a link to the original white paper as a PDF file.](original.pdf)
