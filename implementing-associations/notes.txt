@@ -1,1 +1,0 @@
-The original.pdf file was the original article as submitted to Dr. Dobb's Journal. The article.md file is a Markdown version of what was published in 1998. It is a faithful reproduction of the published article with links and references to entities that are no longer valid removed.
