@@ -1,4 +1,4 @@
-# 5 Reasons to Move Your Line-of-Business Applications to the Cloud
+# Five Reasons to Move Your Line-of-Business Applications to the Cloud
 
 **Frank Hellwig**
 
