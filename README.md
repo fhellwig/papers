@@ -1,6 +1,4 @@
-# Publications
-
-Articles, papers, and other publications by Frank Hellwig.
+# Publications by Frank Hellwig
 
 - [**Cloud Migrations &ndash; Lessons Learned**](https://github.com/fhellwig/publications/blob/master/cloud-migrations-lessons-learned.md) (ACT-IAC Conference Paper, 2018)
 
