@@ -41,6 +41,7 @@ Figure 1 shows a conceptual DoD LOB application consisting of various components
 Of specific note is the necessity for a secure network (i.e., NIPRNet) as the means of connecting users to the cloud via a gateway called the Cloud Access Point (CAP). Not shown in this diagram are infrastructure details such as user directory services or ancillary services such as auditing and cloud management.
 
 ![Figure 1](security-considerations-for-dod-cloud-migrations-fig-1.png 'Figure 1')
+
 _Figure 1 – Migrating a typical LOB application means selecting the appropriate cloud models, achieving the required network connectivity for user access, and securing the authority to operate the system._
 
 Within the context of this dynamic architecture are many complicated facets that are technical, procedural, and regulatory. The aspect of security is one that involves all three of those facets.
@@ -62,6 +63,7 @@ Rather than having each agency conduct the work ensuring that their cloud infras
 Both FISMA and FedRAMP compliance is achieved by meeting the controls identified in National Institute of Standards and Technology (NIST) Special Publication (SP) 800-53, “Recommended Security Controls for Federal Information Systems.” There are three levels (low, moderate, and high) in the FISMA and FedRAMP baselines. Table 1 shows the number of controls for each level. Note that there are additional FedRAMP controls that are specific to cloud environments.
 
 _Table 1 - NIST SP 800-53 controls for FISMA and FedRAMP baseline levels._
+
 ![Table 1](security-considerations-for-dod-cloud-migrations-tbl-1.png 'Table 1')
 
 #### 3.1.2 DISA Impact Levels, the Security Requirements Guide, and FedRAMP Plus
@@ -93,6 +95,7 @@ As a case in point, let us consider the guidance from the Department of the Navy
 The first point is the division of Information Assurance (IA) requirements between the CSP, the Navy, and the system owner. Figure 2 is copied directly from the Navy’s Cloud Update briefing. It illustrates that, while the security controls for part of the infrastructure can be inherited, the system owner must secure their own per-application authorizations. Simply procuring an agency ATO for a CSP is not sufficient. The internal IA requirements must be met before a system becomes operational in the cloud.
 
 ![Figure 2](security-considerations-for-dod-cloud-migrations-fig-2.png 'Figure 2')
+
 _Figure 2 - System, Navy, and CSP IA security responsibilities._
 
 The second point is that, regardless of any CSP ATO, all “Navy information systems are still required to meet all DoD instructions (e.g., 8500), Joint Chiefs instructions (e.g., 6510), and USCC CTOs (e.g., 07-12/HBSS).” The critical message is that migrating to the cloud does not eliminate any existing policy requirements.
@@ -106,6 +109,7 @@ BE recommends that these two points be taken together and that overlap between s
 Deploying a system from an internal environment to the cloud changes how users access the application and, potentially, how they are authenticated and authorized. Migrating a DoD system into the cloud changes the access route for users because a cloud endpoint (outside the internal network) must be accessed via NIPRNet as shown in Figure 3.
 
 ![Figure 3](security-considerations-for-dod-cloud-migrations-fig-3.png 'Figure 3')
+
 _Figure 3 - Connecting to the cloud for DoD users involves several networks and endpoints._
 
 Connecting to a DoD system in the cloud involves one or possibly two components. Users within DISN’s NIPRNet can access the Cloud Information Technology Project (the C-ITP – i.e., the DoD application or system) via a Boundary Cloud Access Point (BCAP). Users not within the DISN (i.e., external internet access) must go through an Internet Access Point (IAP) and from there transition through the BCAP to the C-ITP.
@@ -157,6 +161,7 @@ Cloud service providers offer varying levels of operational support. They vary i
 Table 2 compares the resources supported by the customer, agency, or organization against those managed by the service provider for each service model. On the left is the non-cloud (on premises) solution where the customer manages all physical and computing resources. From there the number of resources supported by the cloud service provider increases from the left to the right.
 
 _Table 2 - Cloud service models provide varying degrees of agency and CSP support responsibilities._
+
 ![Table 2](security-considerations-for-dod-cloud-migrations-tbl-2.png 'Table 2')
 
 #### 3.5.1 Cloud Migration Case Studies
@@ -186,11 +191,13 @@ In this section, we offer a concise subset of vendor cloud service offerings tha
 As of the current writing of this white paper, there are a total of 167 FedRAMP Ready, In Process, and Authorized products. Table 3 breaks this down with successively more restrictive filters. This shows that, while there are many FedRAMP authorizations, those that offer IaaS and PaaS, are baselined at FedRAMP High, and have a JAB P-ATO comprise a much smaller subset.
 
 _Table 3 - Applying successive filters to FedRAMP authorizations results in a smaller subset of products._
+
 ![Table 3](security-considerations-for-dod-cloud-migrations-tbl-3.png 'Table 3')
 
 Figure 4 shows the screen capture from the results in the filter results in Table 3. Both Amazon Web Services (AWS) and Microsoft Azure Government have received JAB authorization to process data at the high impact level. These cloud service offerings were authorized on 21 June 2016 but were assessed by different independent assessors.
 
 ![Figure 4](security-considerations-for-dod-cloud-migrations-fig-4.png 'Figure 4')
+
 _Figure 4 - Screen capture from marketplace.fedramp.gov product search shows the two filtered results._
 
 The number of authorizations on the right indicate the agency-authorizations that have been completed for that provider. As we mentioned previously, the JAB P-ATO refers to a third-party organization completing their assessment of the security controls in place for that provider. However, the agency must still perform their own authorization process before those cloud services can be used by programs within that agency.
@@ -273,3 +280,7 @@ https://docs.microsoft.com/en-us/azure/azure-government/documentation-government
 **Joint Regional Security Stacks (JRSS)**  
 [DISA]  
 http://www.disa.mil/initiatives/jrss
+
+---
+
+[This is a link to the original white paper as a PDF file.](security-considerations-for-dod-cloud-migrations.pdf)
