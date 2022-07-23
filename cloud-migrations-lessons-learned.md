@@ -18,6 +18,8 @@ Readers will find information in these case studies that can assist them with cl
 
 The choices of vendors and solutions made by represented Government agencies and organizations are based on program-specific selection criteria. The Cloud Migration Working Group respects the independence of these choices and does not itself advocate any one vendor or solution over another.
 
+Continued... (See link below)
+
 ---
 
 [This is a link to the original white paper as a PDF file.](cloud-migrations-lessons-learned.pdf)
