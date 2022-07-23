@@ -14,7 +14,7 @@ _October 17-20, 1988_
 
 A major challenge facing the Strategic Defense Initiative (SDI) program and the development of the Strategic Defense System (SDS) is the use and distribution of reusable software. The need for reusable software has clearly been established by the ever increasing cost of software versus the cost of hardware. This cost disproportion is magnified in a program with the scope of the SDS. A SDS Software Library will be created in which reusable software can be cataloged, accessed, and distributed. A key attribute of this library is security. The software in the SDS Software Library must be protected from unauthorized access and modification. This paper demonstrates the need for a secure SDS Software Library and the means by which this can be achieved.
 
-## Introduction
+## 1. Introduction
 
 The Strategic Defense Initiative (SDI) program is an impetus to technology developments on a wide variety of fronts. Two of these fronts are computer hardware and software development. The SDI program is computationally intensive, requiring tomorrow's supercomputers today. This technological pace must be matched by equally intensive software development. The trend over the past decades has shown us that software technology always lags behind hardware technology. Total software costs are rapidly growing as machines become less expensive, and as we uncover more and more problem domains that demand an automated solution [1]. Second and third generation software is hosted on fourth generation machines. Furthermore, when new hardware demands new software solutions, old software is frequently "patched up." More often than not, systems fail in their promise to be extensible and maintainable. In response to this software crisis, the Department of Defense sponsored the development of the Ada programming language and with it, the true potential of reusable software.
 
@@ -22,7 +22,7 @@ The SDI program will make great use of reusable software. There is neither the t
 
 The purpose of this paper is to focus on the need and method of achieving a secure SDS Software Library. This will be addressed in the remaining four sections, each presenting the security issues in succeedingly finer levels of granularity. First, the requirements for a secure library are examined. Second, a conceptual model outlining the required operational capabilities is presented. Third, an implementation is suggested. Finally, the previous material is summarized.
 
-## Security
+## 2. Security
 
 The success of the SDS Software Library can only be assured by the proper application of proven security measures. A failure to do this will result in a library where hostile agents can siphon national secrets without detection. The library will contain a concentrated database of software revealing a great deal of the capabilities. and vulnerabilities of the Strategic Defense System. This concentration of defense software in one location makes the SDS Software Library a high visibility target. The data tables that are included in many classified simulation software packages are a high motivator for illegal penetration into the library. Unauthorized access to the SDS Software Library can result in the compromise of information or corruption of software, thereby resulting in a severe impact to national security.
 
@@ -34,7 +34,7 @@ If the particular software project is classified, the development is usually acc
 
 The software stored in the library and the users of the library will span a wide range of classification levels. The flexibility necessary for the library to be responsive to all classification levels eliminates the option of system high operation. Since the SDS Software Library does not actually execute programs, the security treatment is different from that of other computer systems. The true problem is how to enforce security when such a large number of users have access to such a wide range of storage.
 
-## Conceptual Model
+## 3. Conceptual Model
 
 The SDS Software Library is a storage facility for reusable software serving a widely distributed network of users. The library enables the SDI software development community to efficiently produce complex software systems by providing access to an existing software base. The library is the central point of access to these reusable software modules. A conceptual model of the library is an enumeration of the services. and functions the library must provide. The services and functions exist independently of the library's actual physical configuration. It is, however, difficult to create an abstract functional concept without first defining the physical components that constitute a software library. The following will briefly describe the physical elements of the library.
 
@@ -48,7 +48,7 @@ So far, we have viewed the library as an information source. Prior to being a so
 
 A conceptual model of the library is derived from a detailed look at the services and functions required of the library to operate smoothly and efficiently. This is formally expressed by a set of required operational capabilities. The required operational capabilities are a functional decomposition of the SDS Software Library. They state what services the library provides to its users and specifies the interaction between the users and the library. The required operational capabilities determine the system level requirements for the library. They are not an all inclusive listing of functions and services. However, the required operational capabilities must be comprehensive so that additional requirements support the composite system without compromising any individual operational capability or degrading one another, The following is a listing of the minimal required operational capabilities.
 
-### Fundamental Capabilities
+### 3.1 Fundamental Capabilities
 
 Most computer operating systems enforce a relationship between the users and objects such as files and programs. These relationships are usually expressed as read, write, and execute capabilities. In essence, the SDS Software Library is a system with a large number of users and objects. As a top level specification, the fundamental access capabilities apply as follows:
 
@@ -60,7 +60,7 @@ Most computer operating systems enforce a relationship between the users and obj
 
 **Execute:** The SDS Software Library shall not have the capability to execute any software item stored in the library. The SDS Software Library is a software repository, not a software development center. The only software the library will execute is the SLMS.
 
-### Access Modes
+### 3.2 Access Modes
 
 The users of the SDS Software Library shall have two modes of access to the library: system and retrieve.
 
@@ -68,7 +68,7 @@ The users of the SDS Software Library shall have two modes of access to the libr
 
 **Retrieve:** This mode grants the user direct read access to a software item, Notice that read access is a de facto retrieve mode since it is impossible to control a situation where a user at a remote terminal chooses to download the information appearing on his terminal.
 
-### Access Paths
+### 3.3 Access Paths
 
 The SDS Software Library shall support the following means through which users may access the library:
 
@@ -80,15 +80,15 @@ The SDS Software Library shall support the following means through which users m
 
 **Other:** Authorized users may be able to communicate with the library via telephone, mail, courier, and other non electronic means.
 
-### Access Controls
+### 3.4 Access Controls
 
 In accordance with the Department of Defense Trusted Computer System Evaluation Criteria (TCSEC) [5], the library shall incorporate discretionary and mandatory access controls and labels for an Al system. There will be some differences between the TCSEC and the implementation in the library due to the fact that the library users have no write capability and that the library is not capable of executing stored software items.
 
-### Accountability
+### 3.5 Accountability
 
 The SDS Software Library shall incorporate mechanisms to enforce the identification, authentication, and audit requirements as specified for an A1 system by the TCSEC.
 
-### Integrity Controls
+### 3.6 Integrity Controls
 
 The SDS Software Library shall maintain software integrity. Integrity mechanisms ensure that the state of a software item is identical (i.e. has not been modified) to its state at a previous time. The proper use of access controls and integrity locks ensure that software is maintained and updated under strict control.
 
@@ -96,13 +96,13 @@ To ensure that data integrity is maintained, the access to that data must be con
 
 Integrity locks determine if information has been modified. An integrity test can be performed to verify that the present state of a software item is unchanged from some previous state. Additionally, after a software item is distributed to one or more users, the same capability must exist at the remote location to verify that the state of that item matches the state of its parent in the library.
 
-### Storage
+### 3.7 Storage
 
 The SDS Software Library will be required to store software modules having different levels of classification (i.e. multilevel secure storage). Also, certain items may be under strict control independent of classification level. Items under less stringent control should have a wide availability while those under strict control must have very limited distribution.
 
 Since the SDS Software Library is a software storage facility, not a software development center, all storage will appear to be of the write-once-read-many type.
 
-### Software Entry
+### 3.8 Software Entry
 
 Software items are entered into the SDS Software Library only by the administrative personnel. The submitter of the software item must provide the following:
 
@@ -116,19 +116,19 @@ Software items are entered into the SDS Software Library only by the administrat
 
 Current technology does not permit the formal verification of software at the code level. The ability to automatically analyze software and determine if it contains trojan horses, viruses, or other malicious functionality is still years away. This leaves no other alternative but to distrust all software entered into the library. The saving grace of this bleak fact is the non-executable nature of the library. Programs containing a virus cannot propagate to other programs stored in the library since they will not be executed in the library. It is the user who assumes responsibility for the correct or incorrect functioning of a software item obtained from the library.
 
-### Distribution
+### 3.9 Distribution
 
 Software distribution is the transmission of a software item to one or more authorized users via an approved access path. The library shall provide for trusted distribution of software.
 
-### Catalog
+### 3.10 Catalog
 
 The library will maintain a catalog of all software items stored in the library. "The library shall contain procedures that help construct queries and evaluate the retrieved sample for potential reusability." [2]
 
-### Physical Security
+### 3.11 Physical Security
 
 The SDS Software Library central host computer system must be situated in a physically secure area. Protection must be offered to prevent unauthorized access to information and to prevent the malicious destruction of hardware, software, or other library elements in an attempt to deny service.
 
-## Implementation
+## 4. Implementation
 
 In order for the SDS Software Library to simultaneously process information of different sensitivity levels the Department of Defense requires the library to be a trusted system. The TCSEC defines a trusted system as "A system that employs sufficient hardware and software integrity measures to allow its use for processing simultaneously a range of sensitive or classified information." [5] The SDS Software Library must be designed as a secure system while preserving the required functionality. What will be presented here is an informal implementation outline. This implementation fulfills the operational requirements through the proper application of information security mechanisms. It will examine only the electronic portion of the library. The nonelectronic areas are addressed by existing policies for the handling of classified material.
 
@@ -142,7 +142,7 @@ An A1 system affords the data separation necessary to allow an algorithm to be i
 
 The final level of security to consider is the communication channels linking the user to the library. These links must be secure in order to transfer classified information. This requires the use of secure gateways to the library. One possibility is to locate the library within an existing classified data communications system. Sections of the National Test Facility provide this capability. Locating the SDS Software Library within the National Test Facility will provide the SDS Software Library with secure data communication.
 
-## Conclusion
+## 5. Conclusion
 
 In this brief treatment of a complex subject, we have stated the necessity for an SDS Software Library, cited its required operational capabilities, and shown the mandatory role that security must play to create a successful system. A software library is the only method by which the SDI program, or any program of such magnitude, can accomplish its challenging software development tasks. The notion of reusable software demands a central access facility. A software library must provide a broad range of services to entice software developers to make good use of reusable code. None of these services should be degraded unnecessarily by the proper incorporation of security.
 
